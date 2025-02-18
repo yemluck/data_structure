@@ -48,3 +48,9 @@ def compare_strings(str1, str2):
 
 
 print(compare_strings("xy#z", "xzzz##"))
+
+
+"""
+ Another approach is to use stacks. Will figure out the two pointer solution to this. Current explanation isn't super clear
+ 
+"""
