@@ -18,3 +18,7 @@ Explanation: After applying backspaces, the strings become "x" and "x" respectiv
             In "xyz##", the first "#" removes the character "z" and the second "#" removes the character "y".
 """
 
+# Naive approach
+
+def compare_strings(str1, str2):
+    pass

@@ -32,14 +32,10 @@ def make_square2(arr):
         if left_square > right_square:
             output[length] = left_square
             left += 1
-            print("if 1", output, "this is left", left)
         else:
             output[length] = right_square
             right -= 1
-            print("elif2", output, "this is right", right)
-
         length -= 1
-        print(f"this is the length: {length}")
     return output
 
 
