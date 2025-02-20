@@ -36,12 +36,13 @@ def number_of_steps(n):
 
     while n > 0:
         if n % 2 == 0:
-            n = n//2
-            count += 1
+            n = n//2 # or n /= 2
+            #count += 1
         else:
-            n = n - 1
-            count += 1
-
+            n = n - 1 # or n -=1
+            #count += 1
+            # count be brought out of the conditionals since only one operation runs at a time.
+        count += 1
     return count
 
 print(number_of_steps(14))
