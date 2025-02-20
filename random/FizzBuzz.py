@@ -37,5 +37,37 @@ def fizzBuzz(n):
             stack.append(str(number))
     return stack
 
+# Bad solution. Worst case scenario is O(nxm)
+def fizzBuzz2(n):
+    stack = ["" for x in range(1,n+1)]
+    for i in range(1, n+1):
+
+        if i%3 == 0:
+            stack[i-1] += "Fizz"
+        if i%5 == 0:
+            stack[i-1] += "Buzz"
+        if stack[i-1] == "": stack[i-1] = str(i) # This loops through a second array
+
+    return stack
+
+# Optimal solution
+def fizzBuzz3(n):
+    stack = []
+    for i in range(1, n+1):
+        current = ""
+
+        if i%3 ==0:
+            current += "Fizz"
+        if i%5 == 0:
+            current += "Buzz"
+        if current == "":
+            current = str(i)
+        stack.append(current)
+
+    return stack
+
+
 
 print(fizzBuzz(16))
+print(fizzBuzz2(16))
+print(fizzBuzz3(16))
