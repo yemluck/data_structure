@@ -42,7 +42,7 @@ class LinkedList:
         new_node = Node(data)
 
         if self.head is None:
-            self.prepend(new_node)
+            self.head = new_node
         else:
             curr = self.head
             while curr.next is not None:
@@ -67,11 +67,39 @@ class LinkedList:
             print("Index not present")
 
 
+    def print_list(self):
+        output = []
 
-    # Still working in this but loving progress so far.
-    # Yet to solve middle of list
+        if self.head is None:
+            print("Empty")
+        else:
+            curr = self.head
+            while curr:
+                output.append(curr.data)
+                curr = curr.next
+            print(output)
+            # print(len(output))
 
 
 
+    def middle_of_ll(self):
+        slow = fast = self.head
+
+        while fast is not None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow.data
 
 
+
+chris_ll = LinkedList()
+
+chris_ll.append(3)
+chris_ll.append(4)
+chris_ll.append(5)
+chris_ll.prepend(7)
+chris_ll.insert(2,2)
+chris_ll.print_list()
+
+print(chris_ll.middle_of_ll())
