@@ -77,11 +77,6 @@ class LinkedList:
             print("Index not present")
 
 
-
-
-
-
-
     def print_list(self):
         output = []
 
