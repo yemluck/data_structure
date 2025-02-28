@@ -39,9 +39,7 @@ def can_construct(ransom_note, magazine):
             seen[char] = 1
 
     for char in ransom_note:
-        if char not in seen:
-            return False
-        if seen[char] <= 0:
+        if char not in seen or seen[char] <= 0:
             return False
         else:
             seen[char] -= 1
