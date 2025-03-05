@@ -21,4 +21,4 @@ def remove_elements(nums, val):
         else:
             l += 1
 
-    return r+1
+    return l
