@@ -45,3 +45,25 @@ def valid_mountain(arr):
     return left == right
 
 print(valid_mountain([0,1,2,3,4,5,6,7,8,9]))
+
+
+
+# optimal solution
+
+def valid_mountain2(arr):
+    length = len(arr)
+    i = 0 # using this to loop
+
+    # walk up
+    while i+1 < length and arr[i] < arr[i+1]:
+        i += 1
+
+    # peak can't be first or last
+    if i == 0 or i == length - 1:
+        return False
+
+    # walk down
+    while i+1 < length and arr[i] > arr[i+1]:
+        i += 1
+
+    return i == length - 1 # if we reach the peak and the base, must be a valid mountain
