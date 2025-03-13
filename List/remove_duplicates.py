@@ -23,5 +23,26 @@ Explanation: Your function should return k = 5, with the first five elements of 
 It does not matter what you leave beyond the returned k (hence they are underscores).
 """
 
+# Using Pop
 def remove_dup(nums):
-    pass
+    for i in range(len(nums)-2, -1, -1):
+        if nums[i] == nums[i+1]:
+            nums.pop(i+1)
+    return nums
+
+
+# Not using pop
+def remove_dup2(nums):
+    left = 0
+    right = 0
+    while right < len(nums):
+        if nums[left] == nums[right]:
+            right +=1
+        else:
+            left +=1
+            nums[left] = nums[right]
+
+    nums = nums[:left+1]
+    return nums
+
+print(remove_dup2([0,0,1,1,1,2,2,3,3,4]))
