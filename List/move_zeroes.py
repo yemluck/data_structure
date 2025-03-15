@@ -24,17 +24,11 @@ Follow up: Could you minimize the total number of operations done?
 
 def move_zeroes(nums):
     l = 0
-    r = 0
 
-    while r<len(nums):
+    for r in range(len(nums)):
         if nums[r] != 0:
-            nums[l] = nums[r]
-            r +=1
-            l +=1
-        else:
-            while nums[r] == 0:
-                r += 1
-            nums[l] 
+            nums[l], nums[r] = nums[r], nums[l]
+            l += 1
     return nums
 
 print(move_zeroes([0,1,0,12]))
