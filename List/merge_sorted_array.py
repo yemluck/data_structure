@@ -23,7 +23,7 @@ Output: [1]
 Explanation: The arrays we are merging are [] and [1].
 The result of the merge is [1].
 Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit
-in nums1.
+Zgvb in nums1.
 """
 
 def merge(nums1, m, nums2, n):
