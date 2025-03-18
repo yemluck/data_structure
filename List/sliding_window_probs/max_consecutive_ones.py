@@ -19,3 +19,28 @@ The max number of consecutive ones is 4.
 """
 
 # SLIDING WINDOW
+
+def max_consecutive_ones(nums):
+    longest_sequence = 0
+    l, r = 0, 0
+    num_zeroes = 0
+
+    while r < len(nums): # while our window is in bound
+        if nums[r] == 0: # Increase num_zeroes if the rightmost element is 0
+            num_zeroes += 1
+
+        while num_zeroes == 2: # If our window is invalid, contract our window
+            if nums[l] == 0:
+                num_zeroes -= 1
+            l += 1
+
+        longest_sequence = max(longest_sequence, r-l+1) # Update our longest sequence answer
+
+        r += 1 # Expand our window
+
+    return longest_sequence
+
+
+
+print(max_consecutive_ones([1,1,1,1,0]))
+print(max_consecutive_ones([1,0,1,1,0,1]))
