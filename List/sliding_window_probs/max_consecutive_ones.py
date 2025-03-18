@@ -41,6 +41,27 @@ def max_consecutive_ones(nums):
     return longest_sequence
 
 
+# Using for loop
+
+def max_consecutive_ones2(nums):
+    longest_sequence = 0
+    l = 0
+    num_zeroes = 0
+
+    for r in range(len(nums)):
+        if nums[r] == 0:
+            num_zeroes += 1
+
+        while num_zeroes == 2:
+            if nums[l] == 0:
+                num_zeroes -= 1
+            l += 1
+
+        longest_sequence = max(longest_sequence, r-l+1)
+
+    return longest_sequence
 
 print(max_consecutive_ones([1,1,1,1,0]))
 print(max_consecutive_ones([1,0,1,1,0,1]))
+print(max_consecutive_ones2([1,1,1,1,0]))
+print(max_consecutive_ones2([1,0,1,1,0,1]))
