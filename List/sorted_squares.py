@@ -30,7 +30,7 @@ def sorted_squares(nums):
     left, right = 0, n-1
 
     for i in range(n-1, -1, -1):
-        if abs(nums[left] < abs(nums[right])):
+        if abs(nums[left]) < abs(nums[right]):
             square = nums[right]
             right -= 1
         else:
