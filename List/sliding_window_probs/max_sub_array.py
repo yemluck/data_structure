@@ -14,5 +14,19 @@ Input: nums = [5], k = 1
 Output: 5.00000
 """
 
-def max_sub_array(nums):
-    pass
+def max_sub_array(nums, k):
+    max_avg = float("-inf")
+    l = 0
+    total = 0
+    for r in range(k):
+        total += nums[r]
+    max_avg = max(total/k, max_avg)
+
+    for r in range(k, len(nums)):
+        total = total + nums[r] - nums[l]
+        l += 1
+        max_avg = max(total/k, max_avg)
+
+    return max_avg
+
+print(max_sub_array([1, 12, -5, -6, 50, 3], 4))
