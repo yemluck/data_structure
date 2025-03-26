@@ -20,5 +20,13 @@ There may exist other ways to achieve this answer too.
 
 """
 
-def char_replacement(str, k):
+def char_replacement(s, k):
+
+    max_l = 0
+    l = 0
+
+    for r in range(len(s)):
+        pass
+
     pass
+
